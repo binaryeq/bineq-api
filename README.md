@@ -12,9 +12,10 @@ The project uses Maven to build, the command is `mvn test`.
 
 Usage example:
 ````
-    Path benchmarkDir = ...;
-    new io.github.bineq.datasets.EQ()
-        .readRecords(benchmarkDir)
+    Path benchmark = ...;  // the benchmark has been downloaded into this folder
+    DataSet oracle = new new EQ();
+    oracle
+        .readRecords(benchmark)
         .forEach (record -> {
             // do something intersting here ! 
         });

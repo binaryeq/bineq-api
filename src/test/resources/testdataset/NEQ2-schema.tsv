@@ -1,0 +1,10 @@
+name	type	description
+container_1	string	the jar file location of the original project
+container_2	string	the jar file location of the mutated project
+class_1	string	path of the original class file in container_1
+class_2	string	path of the mutated class file in container_2; will have the form '/path/to/SomeClass-<n>.class', where <n> is the mutation number for this class
+description	string	description of the specific mutation applied
+line	number	line number where the mutation was applied
+method_descriptor	string	descriptor of the method where the mutation was applied
+method_name	string	name of the method where the mutation was applied
+mutator	string	name of the Pitest mutator that applied the mutation

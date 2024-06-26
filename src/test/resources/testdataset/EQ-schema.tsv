@@ -1,0 +1,28 @@
+container_1	string	the jar file location of the project built with one (usually the older) compiler version
+container_2	string	the jar file location of the project built with one (usually the newer) compiler version
+class_1	string	path of the class file in container_1
+class_2	string	path of the class file in container_2
+compiler_name_1	string	name of compiler 1
+compiler_name_2	string	name of compiler 2
+compiler_major_version_1	string	Java compiler 1 major version number
+compiler_major_version_2	string	Java compiler 2 major version number
+compiler_minor_version_1	string	Java compiler 1 minor version number
+compiler_minor_version_2	string	Java compiler 2 minor version number
+compiler_patch_version_1	string	Java compiler 1 patch version number
+compiler_patch_version_2	string	Java compiler 2 patch version number
+compiler_extra_config_1	string	underlying docker image name used for ecj builds, otherwise '-'
+compiler_extra_config_2	string	underlying docker image name used for ecj builds, otherwise '-'
+project_name	string	name of project. NOTE: This usually corresponds to the jar name, but not always
+project_major_version	string	project major version number
+project_minor_version	string	project minor version number, or '-' if absent
+project_patch_version	string	project patch version number, or '-' if absent
+generated_by_1	string	ID of tool used to generate class_1 source, or '-' if source was present in repo
+generated_by_2	string	ID of tool used to generate class_2 source, or '-' if source was present in repo
+bytecode_jep181_1	string	true if pre-JEP181 synthetic outer class accessor methods detected in class_1 bytecode, instead of post-JEP181 'nests'
+bytecode_jep181_2	string	true if pre-JEP181 synthetic outer class accessor methods detected in class_2 bytecode, instead of post-JEP181 'nests'
+bytecode_jep280_1	string	true if post-JEP280 invokedynamic string literal concatenation calls detected in class_1 bytecode
+bytecode_jep280_2	string	true if post-JEP280 invokedynamic string literal concatenation calls detected in class_2 bytecode
+scope_1	string	Maven scope of class_1 ('main' or 'test')
+scope_2	string	Maven scope of class_2 ('main' or 'test')
+n_anon_inner_classes_1	string	number of anonymous inner classes in class_1
+n_anon_inner_classes_2	string	number of anonymous inner classes in class_2

@@ -26,7 +26,15 @@ oracle
 Records are a representation of rows in the dataset. The API facilitates extracting the actual byte code from a record and the jars associated with this record:
 
 ```java
-byte[] bytecode1 = new Bytecode(benchmark,root.resolve(benchmark.getContainer_1()),record.getClass_1()).getBytecode();
-byte[] bytecode2 = new Bytecode(benchmark,root.resolve(benchmark.getContainer_2()),record.getClass_2()).getBytecode();
+byte[] bytecode1 = new Bytecode(
+    benchmark,
+    benchmark.resolve(benchmark.getContainer_1()),
+    record.getClass_1()
+    ).getBytecode();
+byte[] bytecode2 = new Bytecode(
+    benchmark,
+    benchmark.resolve(benchmark.getContainer_2()),
+    record.getClass_2()
+    ).getBytecode();
 // now compare bytecodes, e.g. check for identity, whether the _tlsh_ hash is the same, etc !
 ```

@@ -23,6 +23,7 @@ oracle
         
         byte[] bytes1 = bytecodes.bytes1();
         byte[] bytes2 = bytecodes.bytes2();
+
         // now compare bytecodes, e.g. check for byte-by-byte equality, whether a certain hash is the same, etc !
         // example:
         assert Arrays.equals(bytes1,bytes2);

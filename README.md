@@ -18,9 +18,13 @@ DataSet oracle = new EQ(); // or some other included oracle like NEQ1 etc
 oracle
     .records(benchmark)
     .forEach (record -> {
+        // this structure caches bytecodes loaded from jars in memory
         Bytecodes bytecodes = record.load(benchmark);
+        
         byte[] bytes1 = bytecodes.bytes1();
         byte[] bytes2 = bytecodes.bytes2();
-        // now compare bytecodes, e.g. check for identity, whether the _tlsh_ hash is the same, etc !
+        // now compare bytecodes, e.g. check for byte-by-byte equality, whether a certain hash is the same, etc !
+        // example:
+        assert Arrays.equals(bytes1,bytes2);
     });
 ````

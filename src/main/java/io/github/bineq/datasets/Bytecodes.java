@@ -6,6 +6,7 @@ import java.io.IOException;
 
 /**
  * Represents a pair of bytecodes loaded from a record.
+ * Note that Bytecode caches the actual bytecode (byte[]), so those instances should be reused.
  * @author jens dietrich
  */
 public record Bytecodes(Bytecode first, Bytecode second) {

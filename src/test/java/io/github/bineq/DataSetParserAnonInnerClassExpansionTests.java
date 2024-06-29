@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,7 +21,7 @@ public class DataSetParserAnonInnerClassExpansionTests {
     @Test
     public void testRecordCount() throws IOException {
         Assumptions.assumeTrue(Files.exists(DATA));
-        Stream<EQRecord> records = new EQ().readRecords(DATA);
+        Stream<EQRecord> records = new EQ().records(DATA);
         int count = (int)records.count();
         assertEquals(3,count);
     }
@@ -30,7 +29,7 @@ public class DataSetParserAnonInnerClassExpansionTests {
     @Test
     public void testNonAnonInnerClassRecordCount() throws IOException {
         Assumptions.assumeTrue(Files.exists(DATA));
-        Stream<EQRecord> records = new EQ().readRecords(DATA);
+        Stream<EQRecord> records = new EQ().records(DATA);
         int count = (int)records
             .filter(record -> !record.isClass_1AnonInnerClass())
             .filter(record -> !record.isClass_2AnonInnerClass())
@@ -41,7 +40,7 @@ public class DataSetParserAnonInnerClassExpansionTests {
     @Test
     public void testAnonInnerClassRecordCount() throws IOException {
         Assumptions.assumeTrue(Files.exists(DATA));
-        Stream<EQRecord> records = new EQ().readRecords(DATA);
+        Stream<EQRecord> records = new EQ().records(DATA);
         int count = (int)records
             .filter(record -> record.isClass_1AnonInnerClass())
             .filter(record -> record.isClass_2AnonInnerClass())
@@ -52,7 +51,7 @@ public class DataSetParserAnonInnerClassExpansionTests {
     @Test
     public void testDetails() throws IOException {
         Assumptions.assumeTrue(Files.exists(DATA));
-        List<EQRecord> records = new EQ().readRecords(DATA).collect(Collectors.toList());
+        List<EQRecord> records = new EQ().records(DATA).collect(Collectors.toList());
         EQRecord record1 = records.get(0);
         EQRecord record2 = records.get(1);
         EQRecord record3 = records.get(2);

@@ -72,7 +72,7 @@ public class AnalyseAnonymousInnerClasses {
         Set<String> anoInnerClasses = new HashSet<>();
         Map<String,List<Set<String>>> memberSummariesPerOuterClass = new HashMap<>();
 
-        new EQ().readRecords(root)
+        new EQ().records(root)
             .filter(record -> record.isClass_1AnonInnerClass() || record.isClass_2AnonInnerClass())
             .forEach(record -> {
                 Bytecode bytecode1 = new Bytecode(root2, root2.resolve(record.getContainer_1()), record.getClass_1());

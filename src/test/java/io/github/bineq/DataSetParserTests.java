@@ -18,7 +18,7 @@ public class DataSetParserTests {
     @Test
     public void testEQ() throws IOException {
         Assumptions.assumeTrue(Files.exists(DATA));
-        Stream<EQRecord> records = new EQ().readRecords(DATA);
+        Stream<EQRecord> records = new EQ().records(DATA);
         Optional<EQRecord> firstRecord  = records.findFirst();
         assertTrue(firstRecord.isPresent());
         EQRecord record = firstRecord.get();

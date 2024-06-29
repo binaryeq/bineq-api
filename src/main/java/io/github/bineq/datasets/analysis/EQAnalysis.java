@@ -93,7 +93,7 @@ public class EQAnalysis {
             rows.add("\t\\hline \\hline");
             for (DataSet dataSet:DATASETS) {
                 // pre-collect records for faster processing -- requires more memory
-                List<EQRecord> records = (List<EQRecord>) dataSet.readRecords(root).collect(Collectors.toList());
+                List<EQRecord> records = (List<EQRecord>) dataSet.records(root).collect(Collectors.toList());
                 List<String> cells = new ArrayList<>();
                 cells.add(dataSet.name());
                 for (String filterName:FILTERS.keySet()) {

@@ -23,7 +23,7 @@ public final class EQSameMajorCompilerVersion extends EQ {
     }
 
     @Override
-    public Stream<EQRecord> readRecords(Path root) throws IOException {
-        return super.readRecords(root).filter(FILTER);
+    public Stream<EQRecord> records(Path root) throws IOException {
+        return super.records(root).filter(FILTER);
     }
 }

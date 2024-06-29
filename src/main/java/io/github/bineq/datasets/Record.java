@@ -1,5 +1,7 @@
 package io.github.bineq.datasets;
 
+import io.github.bineq.Bytecode;
+
 import java.io.Serializable;
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
@@ -20,6 +22,21 @@ public class Record implements Serializable {
     private String container_2 = null;
     private String class_1 = null;
     private String class_2 = null;
+
+    public Bytecodes load(Path root) {
+        return new Bytecodes(
+            new Bytecode(
+                root,
+                root.resolve(this.getContainer_1()),
+                this.getClass_1()
+            ),
+            new Bytecode(
+                root,
+                root.resolve(this.getContainer_2()),
+                this.getClass_2()
+            )
+        );
+    }
 
 
     // provenance columns

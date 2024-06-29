@@ -30,7 +30,7 @@ public abstract class DataSet<RT extends Record> implements Serializable {
     // instantiate a new record
     public abstract RT create();
 
-    public Stream<RT> readRecords(Path root) throws IOException {
+    public Stream<RT> records(Path root) throws IOException {
         Path path = getRecordPath(root);
         LineNumberReader reader = new LineNumberReader(new FileReader(path.toFile()));
         return reader.lines().skip(1)
@@ -40,7 +40,7 @@ public abstract class DataSet<RT extends Record> implements Serializable {
 
     // parses lines and consumes the record stream, so a bit more expensive than necessary -- should be cached
     public int size(Path root) throws IOException {
-        return (int)readRecords(root).count();
+        return (int) records(root).count();
     }
 
     RT load(String line,int lineNumber) {

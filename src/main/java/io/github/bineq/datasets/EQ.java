@@ -74,8 +74,8 @@ public class EQ extends DataSet<EQRecord> {
     }
 
     @Override
-    public Stream<EQRecord> readRecords(Path root) throws IOException {
-        return super.readRecords(root)
+    public Stream<EQRecord> records(Path root) throws IOException {
+        return super.records(root)
             .flatMap(record -> expandAnonInnerClasses(root,record).stream());
     }
 

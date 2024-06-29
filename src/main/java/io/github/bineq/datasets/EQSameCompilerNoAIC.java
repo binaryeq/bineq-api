@@ -2,7 +2,6 @@ package io.github.bineq.datasets;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -20,8 +19,8 @@ public final class EQSameCompilerNoAIC extends EQ {
     }
 
     @Override
-    public Stream<EQRecord> readRecords(Path root) throws IOException {
-        return super.readRecords(root).filter(FILTER);
+    public Stream<EQRecord> records(Path root) throws IOException {
+        return super.records(root).filter(FILTER);
     }
 
 }

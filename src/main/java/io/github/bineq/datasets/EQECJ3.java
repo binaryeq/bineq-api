@@ -17,8 +17,8 @@ public final class EQECJ3 extends EQ {
     }
 
     @Override
-    public Stream<EQRecord> readRecords(Path root) throws IOException {
-        return super.readRecords(root).filter(eqRecord ->
+    public Stream<EQRecord> records(Path root) throws IOException {
+        return super.records(root).filter(eqRecord ->
             Objects.equals("ecj",eqRecord.getCompiler_name_1()) &&
             Objects.equals("ecj",eqRecord.getCompiler_name_2()) &&
             Objects.equals("3",eqRecord.getCompiler_major_version_1()) &&

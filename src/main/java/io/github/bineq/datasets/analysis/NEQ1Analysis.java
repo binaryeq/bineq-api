@@ -66,7 +66,7 @@ public class NEQ1Analysis {
 
             List<String> rows = new ArrayList<>();
             // pre-collect records for faster processing -- requires more memory
-            List<NEQ1Record> records = new NEQ1().readRecords(root).collect(Collectors.toList());
+            List<NEQ1Record> records = new NEQ1().records(root).collect(Collectors.toList());
             for (String filterName:FILTERS.keySet()) {
                 Predicate<NEQ1Record> filter = FILTERS.get(filterName);
                 long count = records.parallelStream().filter(filter).count();

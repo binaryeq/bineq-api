@@ -14,10 +14,10 @@ Usage example:
 
 ```java
 Path benchmark = ...;  // the benchmark has been downloaded into this folder
-new EQ() // or some other included oracle like NEQ1 etc
+new EQ() // or some other oracle in package `io.github.bineq.datasets` like NEQ1 etc
     .records(benchmark)
     .forEach (record -> {
-        // Bytecodes caches bytecodes loaded from jars in memory
+        // Bytecodes caches bytes loaded from jars
         Bytecodes bytecodes = record.load(benchmark);
         byte[] bytes1 = bytecodes.bytes1();
         byte[] bytes2 = bytecodes.bytes2();

@@ -22,7 +22,7 @@ new EQ() // or some other included oracle like NEQ1 etc
         byte[] bytes1 = bytecodes.bytes1();
         byte[] bytes2 = bytecodes.bytes2();
         
-        // now compare bytecodes, e.g. check for byte-by-byte equality, whether a certain hashes match, etc !
+        // now compare bytecodes, e.g. check for byte-by-byte equality, whether certain hashes match, etc !
         // example:
         assert Arrays.equals(bytes1,bytes2);
     });

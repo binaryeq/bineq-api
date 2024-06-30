@@ -26,11 +26,10 @@ new EQ() // or some other included oracle like NEQ1 etc
         // example:
         assert Arrays.equals(bytes1,bytes2);
     });
-````
+```
 
 Records can also be filtered to create new oracles, used to study particular aspects of equivalence relations. 
-The benchmark API contains a number of pre-defined 
-oracles defined by filters. Custom filters can be easily created. For instance, the following
+The benchmark API contains a number of pre-defined oracles defined by filters. Custom filters can be easily created. For instance, the following
 will only iterate over records where different compilers were used to compile the two classes being compared
 (there is actually a built-in oracle _EQDifferentCompiler_ for this purpose).
 

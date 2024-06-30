@@ -14,17 +14,32 @@ Usage example:
 
 ```java
 Path benchmark = ...;  // the benchmark has been downloaded into this folder
-DataSet oracle = new EQ(); // or some other included oracle like NEQ1 etc
-oracle
+new EQ() // or some other included oracle like NEQ1 etc
     .records(benchmark)
     .forEach (record -> {
-        // this structure caches bytecodes loaded from jars in memory
+        // Bytecodes caches bytecodes loaded from jars in memory
         Bytecodes bytecodes = record.load(benchmark);
-        
         byte[] bytes1 = bytecodes.bytes1();
         byte[] bytes2 = bytecodes.bytes2();
-        // now compare bytecodes, e.g. check for byte-by-byte equality, whether a certain hash is the same, etc !
+        
+        // now compare bytecodes, e.g. check for byte-by-byte equality, whether a certain hashes match, etc !
         // example:
         assert Arrays.equals(bytes1,bytes2);
+    });
+````
+
+Records can also be filtered to create new oracles, used to study particular aspects of equivalence relations. 
+The benchmark API contains a number of pre-defined 
+oracles defined by filters. Custom filters can be easily created. For instance, the following
+will only iterate over records where different compilers were used to compile the two classes being compared
+(there is actually a built-in oracle _EQDifferentCompiler_ for this purpose).
+
+```java
+Path benchmark = ...;  // the benchmark has been downloaded into this folder
+new EQ()
+    .records(benchmark)
+    .filter(record -> !Objects.equals(record.getCompiler_name_1(),record.getCompiler_name_2()))
+    .forEach (record -> {
+        ..
     });
 ````
